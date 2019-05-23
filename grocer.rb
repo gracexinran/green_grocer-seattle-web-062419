@@ -18,7 +18,7 @@ def consolidate_cart(cart)
 
 end
 
-def apply_coupons(cart, coupons)
+def apply_coupons(cart, *coupons)
   # code here
   list = {}
   cart.each do |k,v|
