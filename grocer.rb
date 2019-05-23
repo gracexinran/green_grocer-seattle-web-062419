@@ -21,7 +21,7 @@ end
 def apply_coupons(cart, coupons)
   # code here
   cart = consolidate_cart(cart)
-  
+
   cart.each do |name, value|
 
     if name == coupons[:item]
@@ -32,7 +32,7 @@ def apply_coupons(cart, coupons)
       cart[coupon][:clearance] = true
       cart[coupon][:count] = coupons[:num]
     end
-  
+
 
 end
   cart
