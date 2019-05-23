@@ -30,7 +30,7 @@ def apply_coupons(cart, coupons)
         list[name][:count] = value[:count] - x[:num]
         coupon = "#{name} W/COUPON"
         if !list[coupon]
-        
+
         list[coupon] = {}
         list[coupon][:price] = x[:cost]
         list[coupon][:clearance] = true
