@@ -22,6 +22,7 @@ def apply_coupons(cart, coupons)
   # code here
   consolidate_cart(cart)
   cart.each do |name, value|
+    coupons.each do |coupon|
     if name == coupons[:item]
       value[:count] -= coupons[:num]
       coupon = "#{name} W/COUPON"
