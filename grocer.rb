@@ -20,8 +20,8 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  hash = consolidate_cart(cart)
-  hash.each do |name, value|
+  consolidate_cart(cart)
+  cart.each do |name, value|
     if name == coupons[:item]
       value[:count] -= coupons[:num]
       coupon = "#{name} W/COUPON"
