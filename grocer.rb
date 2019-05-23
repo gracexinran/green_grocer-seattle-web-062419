@@ -20,21 +20,23 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-
-coupons.each do |x|
-  cart.each do |name, value|
-
-    if name == x[:item]
-      value[:count] -= x[:num]
-      coupon = "#{name} W/COUPON"
-      cart[coupon] = {}
-      cart[coupon][:price] = x[:cost]
-      cart[coupon][:clearance] = true
-      cart[coupon][:count] = x[:num]
+  list = {}
+  cart.each do |k,v|
+    list[k] = v
+  end
+  coupons.each do |x|
+    cart.each do |name, value|
+      if name == x[:item]
+        list[:name][:count] = value[:count] - x[:num]
+        coupon = "#{name} W/COUPON"
+        list[coupon] = {}
+        list[coupon][:price] = x[:cost]
+        list[coupon][:clearance] = true
+        list[coupon][:count] = x[:num]
     end
   end
 end
-  cart
+  list
 end
 
 def apply_clearance(cart)
