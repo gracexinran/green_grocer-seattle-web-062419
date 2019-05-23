@@ -23,7 +23,7 @@ def apply_coupons(cart, coupons)
 
 coupons.each do |x|
   cart.each do |name, value|
-    
+
     if name == x[:item]
       value[:count] -= x[:num]
       coupon = "#{name} W/COUPON"
