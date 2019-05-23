@@ -33,7 +33,7 @@ def apply_coupons(cart, coupons)
 
         list[coupon] = {}
         list[coupon][:price] = x[:cost]
-        list[coupon][:clearance] = true
+        list[coupon][:clearance] = value[:clearance]
         list[coupon][:count] = 1
         else
           list[coupon][:count] += 1
