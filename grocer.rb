@@ -28,8 +28,9 @@ def apply_coupons(cart, coupons)
     cart.each do |name, value|
       if name == x[:item]
         list[name][:count] = value[:count] - x[:num]
-        if !list[coupon]
         coupon = "#{name} W/COUPON"
+        if !list[coupon]
+        
         list[coupon] = {}
         list[coupon][:price] = x[:cost]
         list[coupon][:clearance] = true
